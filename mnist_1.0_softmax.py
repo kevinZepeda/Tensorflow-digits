@@ -41,3 +41,9 @@ allbiases = tf.reshape(b, [-1])
 I = tensorflowvisu.tf_format_mnist_images(X, Y, Y_)
 It = tensorflowvisu.tf_format_mnist_images(X, Y, Y_, 1000, lines=25)
 datavis = tensorflowvisu.MnistDataVis()
+
+
+# init
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
