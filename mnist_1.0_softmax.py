@@ -19,3 +19,17 @@ b = tf.Variable(tf.zeros([10]))
 # convierte imagenes a una sola linea de pixeles
 # -1 significa "la unica dimension posible que mantendra el numero de elementos"
 XX = tf.reshape(X, [-1, 784])
+
+# El modelo
+Y = tf.nn.softmax(tf.matmul(XX, W) + b)
+
+# cross-entropy
+cross_entropy = -tf.reduce_mean(Y_ * tf.log(Y)) * 1000.0  
+                                                          
+
+# presicion del modelo entrenado, entre 0 (peor) y 1 (mejor)
+correct_prediction = tf.equal(tf.argmax(Y, 1), tf.argmax(Y_, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+# entrenamiento, ratio de aprendizaje = 0.005
+train_step = tf.train.GradientDescentOptimizer(0.005).minimize(cross_entropy)
