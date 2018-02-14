@@ -31,9 +31,3 @@ Windows:
 		If you get the error "Could not find a version that satisfies the requirement (...)" try the following alternative:
 		conda config --add channels conda-forge
 		conda install tensorflow
-
-TEST YOUR INSTALLATION:
-    git clone https://github.com/martin-gorner/tensorflow-mnist-tutorial.git
-    cd tensorflow-mnist-tutorial
-    python3 mnist_1.0_softmax.py
-    => A window should appear displaying a graphical visualisation and you should also see training data in the terminal.
